@@ -22,7 +22,7 @@ $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 
-<div class="contenedor">
+<div class="contenedor-amplio">
     <h1>Dogos Gym</h1>
     <h2>Gestión de Usuarios</h2>
 
