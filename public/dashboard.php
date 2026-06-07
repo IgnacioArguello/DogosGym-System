@@ -6,6 +6,12 @@ if (!isset($_SESSION['id_usuario'])) {
     header('Location: ../auth/login.php');
     exit;
 }
+
+// Evitar que el navegador guarde la página en caché
+header('Cache-Control: no-store, no-cache, must-revalidate');
+header('Pragma: no-cache');
+header('Expires: 0');
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
