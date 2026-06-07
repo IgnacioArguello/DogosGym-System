@@ -11,7 +11,6 @@ if (!isset($_SESSION['id_usuario'])) {
 header('Cache-Control: no-store, no-cache, must-revalidate');
 header('Pragma: no-cache');
 header('Expires: 0');
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -26,7 +25,18 @@ header('Expires: 0');
     <h1>Dogos Gym</h1>
     <h2>Bienvenido, <?php echo htmlspecialchars($_SESSION['nombre']); ?></h2>
     <p>Panel principal del sistema.</p>
-    <a href="../auth/logout.php">Cerrar sesión</a>
+
+    <div class="menu-dashboard">
+
+        <a href="perfil.php" class="btn-menu">Mi Perfil</a>
+
+        <?php if ($_SESSION['rol'] === 'admin'): ?>
+            <a href="../admin/usuarios.php" class="btn-menu">Gestión de Usuarios</a>
+        <?php endif; ?>
+
+    </div>
+
+    <a href="../auth/logout.php" class="link-cerrar">Cerrar sesión</a>
 </div>
 
 </body>
